@@ -1,103 +1,183 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Corent API",
-        "description": "Move your app forward with the Uber API",
-        "version": "1.0.0"
+        "description": "Corent API CRUD sample",
+        "version": "1.0.0",
+        "title": "Corent API  CRUD Operations",
+        "termsOfService": "http://corenttech.com",
+        "contact": {
+            "email": "grarunkumar@corenttech.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
     },
-    "host": "api.uber.com",
+    "host": "corenttech.com",
+    "basePath": "/My_SampleAPP",
     "schemes": [
-        "https"
-    ],
-    "basePath": "/v1",
-    "produces": [
-        "application/json"
+        "http"
     ],
     "paths": {
-        "/products": {
-            "get": {
-                "summary": "Product Types",
-                "description": "The Products endpoint returns information about the *Uber* products\noffered at a given location. The response includes the display name\nand other details about each product, and lists the products in the\nproper display order.\n",
+        "/create": {
+            "post": {
+                "summary": "create Operation",
+                "description": "This is create Operation in CRUD",
+                "operationId": "createUSER",
+                "consumes": [
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml"
+                ],
                 "parameters": [
                     {
-                        "name": "latitude",
-                        "in": "query",
-                        "description": "Latitude component of location.",
+                        "in": "body",
+                        "name": "user",
+                        "description": "User Object needs to be added",
                         "required": true,
-                        "type": "number",
-                        "format": "double"
-                    },
-                    {
-                        "name": "longitude",
-                        "in": "query",
-                        "description": "Longitude component of location.",
-                        "required": true,
-                        "type": "number",
-                        "format": "double"
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
                     }
                 ],
-                "tags": [
-                    "Products"
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/user/{username}": {
+            "get": {
+                "summary": "Get user by user name",
+                "description": "This is Read Operation in CRUD",
+                "operationId": "getUserByName",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "The name that needs to be fetched. Use user1 for testing. ",
+                        "required": true,
+                        "type": "string"
+                    }
                 ],
                 "responses": {
                     "200": {
-                        "description": "An array of products",
+                        "description": "successful operation",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Product"
-                            }
+                            "$ref": "#/definitions/User"
                         }
                     },
-                    "default": {
-                        "description": "Unexpected error",
+                    "400": {
+                        "description": "Invalid username supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Updated user",
+                "description": "This is update Operation in CRUD",
+                "operationId": "updateUser",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "name that need to be updated",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Updated user object",
+                        "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Error"
+                            "$ref": "#/definitions/User"
                         }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid user supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete user",
+                "description": "This is delete Operation in CRUD",
+                "operationId": "deleteUser",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "The name that needs to be deleted",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid username supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
                     }
                 }
             }
         }
     },
     "definitions": {
-        "Product": {
+        "User": {
             "type": "object",
             "properties": {
-                "product_id": {
-                    "type": "string",
-                    "description": "Unique identifier representing a specific product for a given latitude & longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of product."
-                },
-                "display_name": {
-                    "type": "string",
-                    "description": "Display name of product."
-                },
-                "capacity": {
-                    "type": "string",
-                    "description": "Capacity of product. For example, 4 people."
-                },
-                "image": {
-                    "type": "string",
-                    "description": "Image URL representing the product."
-                }
-            }
-        },
-        "Error": {
-            "type": "object",
-            "properties": {
-                "code": {
+                "id": {
                     "type": "integer",
-                    "format": "int32"
+                    "format": "int64"
                 },
-                "message": {
+                "username": {
                     "type": "string"
                 },
-                "fields": {
+                "firstName": {
                     "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "userStatus": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "User Status"
                 }
+            },
+            "xml": {
+                "name": "User"
             }
         }
     }
