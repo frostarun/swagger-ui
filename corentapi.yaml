@@ -10,7 +10,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 tags:
-  - name: user
+  - name: Corent
     description: This is Swagger CRUD sample
 host: corenttech.com
 basePath: /My_SampleAPP
