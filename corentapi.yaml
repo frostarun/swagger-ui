@@ -9,7 +9,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: 192.168.0.254:8081
+host: http://localhost:8081
 basePath: /My_SampleAPP
 schemes:
   - http
