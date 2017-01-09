@@ -9,13 +9,18 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: http://localhost:8081
+tags:
+  - name: user
+    description: This is Swagger CRUD sample
+host: corenttech.com
 basePath: /My_SampleAPP
 schemes:
   - http
 paths:
   /create:
     post:
+      tags:
+        - user
       summary: create Operation
       description: This is create Operation in CRUD
       operationId: createUSER
@@ -37,6 +42,8 @@ paths:
           description: Invalid input
   '/user/{username}':
     get:
+      tags:
+        - user
       summary: Get user by user name
       description: This is Read Operation in CRUD
       operationId: getUserByName
@@ -56,6 +63,8 @@ paths:
         '404':
           description: User not found
     put:
+      tags:
+        - user
       summary: Updated user
       description: This is update Operation in CRUD
       operationId: updateUser
@@ -81,6 +90,8 @@ paths:
         '404':
           description: User not found
     delete:
+      tags:
+        - user
       summary: Delete user
       description: This is delete Operation in CRUD
       operationId: deleteUser
