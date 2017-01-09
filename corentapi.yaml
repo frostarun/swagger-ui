@@ -20,7 +20,7 @@ paths:
   /create:
     post:
       tags:
-        - user
+        - Corent
       summary: create Operation
       description: This is create Operation in CRUD
       operationId: createUSER
@@ -43,7 +43,7 @@ paths:
   '/user/{username}':
     get:
       tags:
-        - user
+        - Corent
       summary: Get user by user name
       description: This is Read Operation in CRUD
       operationId: getUserByName
@@ -64,7 +64,7 @@ paths:
           description: User not found
     put:
       tags:
-        - user
+        - Corent
       summary: Updated user
       description: This is update Operation in CRUD
       operationId: updateUser
@@ -91,7 +91,7 @@ paths:
           description: User not found
     delete:
       tags:
-        - user
+        - Corent
       summary: Delete user
       description: This is delete Operation in CRUD
       operationId: deleteUser
