@@ -12,7 +12,7 @@ info:
 tags:
   - name: CRUD
     description: This is Swagger CRUD sample
-host: 192.168.1.11:8080
+host: 192.168.1.11:8081
 basePath: /My_SampleAPP
 schemes:
   - http
