@@ -10,9 +10,9 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 tags:
-  - name: Corent
+  - name: CRUD
     description: This is Swagger CRUD sample
-host: corenttech.com
+host: 192.168.1.11:8080
 basePath: /My_SampleAPP
 schemes:
   - http
@@ -20,7 +20,7 @@ paths:
   /create:
     post:
       tags:
-        - Corent
+        - CRUD
       summary: create Operation
       description: This is create Operation in CRUD
       operationId: createUSER
@@ -40,21 +40,26 @@ paths:
           description: successful operation
         '405':
           description: Invalid input
+        '404':
+          description: User not found
   '/user/{username}':
     get:
       tags:
-        - Corent
+        - CRUD
       summary: Get user by user name
       description: This is Read Operation in CRUD
       operationId: getUserByName
       produces:
         - application/xml
+        
       parameters:
         - name: username
           in: path
           description: 'The name that needs to be fetched. Use user1 for testing. '
           required: true
           type: string
+          
+          
       responses:
         '200':
           description: successful operation
@@ -64,10 +69,12 @@ paths:
           description: User not found
     put:
       tags:
-        - Corent
+        - CRUD
       summary: Updated user
       description: This is update Operation in CRUD
       operationId: updateUser
+      consumes:
+        - application/xml
       produces:
         - application/xml
       parameters:
@@ -91,7 +98,7 @@ paths:
           description: User not found
     delete:
       tags:
-        - Corent
+        - CRUD
       summary: Delete user
       description: This is delete Operation in CRUD
       operationId: deleteUser
