@@ -21,7 +21,7 @@ paths:
     post:
       tags:
         - CRUD
-      summary: create Operation
+      summary: create User
       description: This is create Operation in CRUD
       operationId: createUSER
       consumes:
@@ -46,12 +46,11 @@ paths:
     get:
       tags:
         - CRUD
-      summary: Get user by user name
+      summary: Get User 
       description: This is Read Operation in CRUD
       operationId: getUserByName
       produces:
         - application/xml
-        
       parameters:
         - name: username
           in: path
@@ -70,7 +69,7 @@ paths:
     put:
       tags:
         - CRUD
-      summary: Updated user
+      summary: Update user
       description: This is update Operation in CRUD
       operationId: updateUser
       consumes:
