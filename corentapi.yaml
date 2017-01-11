@@ -25,9 +25,9 @@ paths:
       description: This is create Operation in CRUD
       operationId: createUSER
       consumes:
-        - application/xml
+        - application/json
       produces:
-        - application/xml
+        - application/json
       parameters:
         - in: body
           name: user
@@ -50,7 +50,7 @@ paths:
       description: This is Read Operation in CRUD
       operationId: getUserByName
       produces:
-        - application/xml
+        - application/json
       parameters:
         - name: UserName
           in: path
@@ -73,9 +73,9 @@ paths:
       description: This is update Operation in CRUD
       operationId: updateUser
       consumes:
-        - application/xml
+        - application/json
       produces:
-        - application/xml
+        - application/json
       parameters:
         - name: UserName
           in: path
@@ -102,7 +102,7 @@ paths:
       description: This is delete Operation in CRUD
       operationId: deleteUser
       produces:
-        - application/xml
+        - application/json
       parameters:
         - name: UserName
           in: path
