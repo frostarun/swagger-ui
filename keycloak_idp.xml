@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor entityID="http://192.168.0.209:8083/auth/realms/keycloak-saml-sample"
+<EntityDescriptor entityID="http://192.168.0.209:8083/auth/realms/spring_sso"
                    xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
                    xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -7,24 +7,24 @@
       protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
       <SingleLogoutService
          Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-         Location="http://192.168.0.209:8083/auth/realms/keycloak-saml-sample/protocol/saml" />
+         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
       <SingleLogoutService
          Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-         Location="http://192.168.0.209:8083/auth/realms/keycloak-saml-sample/protocol/saml" />
+         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
 
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-         Location="http://192.168.0.209:8083/auth/realms/keycloak-saml-sample/protocol/saml" />
+         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-         Location="http://192.168.0.209:8083/auth/realms/keycloak-saml-sample/protocol/saml" />
+         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
       <KeyDescriptor use="signing">
         <dsig:KeyInfo>
           <dsig:KeyName>FJ86GcF3jTbNLOco4NvZkUCIUmfYCqoqtOQeMfbhNlE</dsig:KeyName>
           <dsig:X509Data>
-            <dsig:X509Certificate>MIIBsjCCARsCBgFaNzfjdzANBgkqhkiG9w0BAQsFADAfMR0wGwYDVQQDDBRrZXljbG9hay1zYW1sLXNhbXBsZTAeFw0xNzAyMTMxMTIzMTRaFw0yNzAyMTMxMTI0NTRaMB8xHTAbBgNVBAMMFGtleWNsb2FrLXNhbWwtc2FtcGxlMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrVrCuTtArbgaZzL1hvh0xtL5mc7o0NqPVnYXkLvgcwiC3BjLGw1tGEGoJaXDuSaRllobm53JBhjx33UNv+5z/UMG4kytBWxheNVKnL6GgqlNabMaFfPLPCF8kAgKnsi79NMo+n6KnSY8YeUmec/p2vjO2NjsSAVcWEQMVhJ31LwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAEUHT2ujBmHiczxm/e/BEZf0mdjL10AkaRPbhAetbfrwdQ0I7BaM4eBuNtGoZ3naxXkTWI9hks0PK9DQ4AiNlK6bbzTUoP6oH2jfl9uVH2Tb/CSEkZ+8lEau+NRmOqbeFkq01OGI75tCVmQAtmO4VNRF5p3N776DB2kpy775q0uf</dsig:X509Certificate>
+            <dsig:X509Certificate>MIIBnjCCAQcCBgFaSnMwMTANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDDApzcHJpbmdfc3NvMB4XDTE3MDIxNzA1MDA0N1oXDTI3MDIxNzA1MDIyN1owFTETMBEGA1UEAwwKc3ByaW5nX3NzbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAq1awrk7QK24Gmcy9Yb4dMbS+ZnO6NDaj1Z2F5C74HMIgtwYyxsNbRhBqCWlw7kmkZZaG5udyQYY8d91Db/uc/1DBuJMrQVsYXjVSpy+hoKpTWmzGhXzyzwhfJAICp7Iu/TTKPp+ip0mPGHlJnnP6dr4ztjY7EgFXFhEDFYSd9S8CAwEAATANBgkqhkiG9w0BAQsFAAOBgQCft9dTlZx8E+QHkwz18L3Erck2S+rn3yHJm1RYW/WecptpUk0tpODbBiq+kTJeBT4OkKtUtSzQx7/4WcuBMH+dFEFIo2wbEUz9GG56xCuiyUhFzIrI/o2wzSJLBwccqV8rwOhnQgoUHYE5L5aoFovrhpH1OVGS4l9l6wG6eQW+Cg==</dsig:X509Certificate>
           </dsig:X509Data>
         </dsig:KeyInfo>
       </KeyDescriptor>
