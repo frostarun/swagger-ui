@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor entityID="http://192.168.0.209:8083/auth/realms/spring_sso"
+<EntityDescriptor entityID="http://192.168.0.139:8083/auth/realms/spring_sso"
                    xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
                    xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -7,19 +7,19 @@
       protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
       <SingleLogoutService
          Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
+         Location="http://192.168.0.139:8083/auth/realms/spring_sso/protocol/saml" />
       <SingleLogoutService
          Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
+         Location="http://192.168.0.139:8083/auth/realms/spring_sso/protocol/saml" />
    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
 
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
+         Location="http://192.168.0.139:8083/auth/realms/spring_sso/protocol/saml" />
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-         Location="http://192.168.0.209:8083/auth/realms/spring_sso/protocol/saml" />
+         Location="http://192.168.0.139:8083/auth/realms/spring_sso/protocol/saml" />
       <KeyDescriptor use="signing">
         <dsig:KeyInfo>
           <dsig:KeyName>FJ86GcF3jTbNLOco4NvZkUCIUmfYCqoqtOQeMfbhNlE</dsig:KeyName>
